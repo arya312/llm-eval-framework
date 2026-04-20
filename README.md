@@ -85,21 +85,6 @@ Open `eval_report.html` in your browser.
 
 ---
 
-## Project structure
-llm-eval-framework/
-├── src/
-│   ├── llm_client.py      # Claude API wrapper (ask_with_context, classify_sentiment)
-│   ├── evaluators.py      # Evaluation functions (faithfulness, relevance, hallucination)
-│   └── report_generator.py # HTML report from pytest JSON output
-├── tests/
-│   └── test_rag_quality.py # Full test suite
-├── .github/
-│   └── workflows/
-│       └── eval.yml       # GitHub Actions CI pipeline
-└── pytest.ini
-
----
-
 ## Add it to your own project
 
 Copy `src/evaluators.py` into your project and use the evaluation functions directly:
