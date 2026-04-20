@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LLM Eval Report</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 1000px; margin: 0 auto; padding: 2rem; background: #f8fafc; }
+        h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+        .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 1.5rem 0; }
+        .card { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e2e8f0; }
+        .card-label { font-size: 12px; color: #64748b; margin-bottom: 4px; }
+        .card-value { font-size: 28px; font-weight: 700; }
+        table { width: 100%; background: white; border-radius: 12px; border-collapse: collapse; }
+        th { padding: 12px; background: #f1f5f9; text-align: left; font-size: 13px; color: #475569; }
+    </style>
+</head>
+<body>
+    <h1>LLM Evaluation Report</h1>
+    <p style="color:#64748b">Generated: 2026-04-20 14:01:38 · Duration: 29.65s</p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-label">Total tests</div>
+            <div class="card-value">9</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Passed</div>
+            <div class="card-value" style="color:#22c55e">9</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Failed</div>
+            <div class="card-value" style="color:#22c55e">0</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Pass rate</div>
+            <div class="card-value" style="color:#22c55e">100.0%</div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Test</th>
+                <th style="text-align:center">Result</th>
+                <th style="text-align:center">Duration</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_answer_is_faithful_to_context</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace">Faithfulness score: 0.552</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_no_hallucination_on_grounded_question</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace">Answer: Based on the document, the Transformer achieved a BLEU score of **28.4** on the English-to-German tr</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_admits_ignorance_for_out_of_context_question</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace">Answer: I don't know based on the document.
+
+The provided context discusses the Transformer architecture and contains no information about the capital of France.</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_response_within_10_seconds</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace">Latency: 1.815s</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_latency_sla_helper</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace"></td>
+        </tr>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_answer_relevant_to_question</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace">Relevance score: 0.645</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_positive_sentiment</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace">Sentiment: positive (0.98)</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_negative_sentiment</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace">Sentiment: negative (0.95)</td>
+        </tr>
+        <tr>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-family:monospace;font-size:13px">test_neutral_sentiment</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center">
+                <span style="background:#22c55e;color:white;padding:3px 10px;border-radius:20px;font-size:12px">✅ passed</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;font-size:13px;color:#64748b">0s</td>
+            <td style="padding:12px;border-bottom:1px solid #e2e8f0;font-size:12px;color:#64748b;font-family:monospace">Sentiment: neutral (0.95)</td>
+        </tr></tbody>
+    </table>
+
+    <p style="font-size:12px;color:#cbd5e1;text-align:center;margin-top:2rem">
+        LLM Eval Framework · github.com/arya312/llm-eval-framework
+    </p>
+</body>
+</html>
